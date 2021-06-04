@@ -1,0 +1,246 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#content{
+    margin-top: 4em;
+}
+
+
+#mainpagetitle{
+    font-size: 60px; 
+}
+
+/*Estilos de la navbar */
+
+.navbar-custom {
+    background-color: #004266;
+
+}
+/* change the brand and text color */
+ 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    font-weight: 800;
+    color: white;
+}
+
+
+
+/* change the link color */
+ 
+.navbar-custom .navbar-nav .nav-link {
+    font-weight: 500;
+    color:white
+}
+/* change the color of active or hovered links */
+ 
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    font-weight: 500;
+    color:white
+}
+
+.login-btn,.register-btn,.logout-btn{
+    border: 0 none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 999px;
+}
+
+.login-btn{
+    padding: 10px 25px;
+    background-color: #aff540;
+    border-color: #aff540;
+}
+
+.register-btn{
+    padding: 10px 15px;
+    background-color: #fdc11c;
+    border-color: #fdc11c;
+}
+
+.logout-btn{
+    padding: 10px 15px;
+    background-color: #e21111;
+    border-color: #e21111;
+}
+
+.jumbotron.welcome{
+    margin: 2em;
+}
+
+#mainpagetitle{
+    font-size: 4em;
+
+}
+
+.station-text{
+    margin-top: 1.3em;
+
+}
+
+.row.popularstations{
+    overflow: auto;
+    margin-top: 1em;
+    margin-bottom: 4em;
+}
+
+#stationElement{
+    width: 10em;
+    height: 21em;
+    margin-left:1.5em;
+    margin-right:1.5em;
+}
+
+.card-img-top{
+    width: auto;
+    height: 13em;
+}
+
+.custom-card{
+border:none;
+}
+
+#mainFooter{
+    background-color: #004266;
+    margin-top: auto;
+}
+
+
+.top-chart-table th{
+    color:#004266;
+}
+
+input[type=text] {
+	border: none;
+	border-radius: 0;
+	border-bottom: 2px solid #004266;
+}
+
+input[type=password] {
+	border: none;
+	border-radius: 0;
+	border-bottom: 2px solid #004266;
+}
+
+#register_button,#login_button {
+    border: 0 none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 10px 15px;
+    background-color:#004266;
+	color: white;
+}
+
+
+#share_button{
+    border: 2px solid #004266;
+    width: auto;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    padding: 15px 43px;
+	color:#004266; 
+}
+
+#favourite_button{
+    background-color: #004266;
+    width: auto;
+    border-radius: 0;
+    letter-spacing: 0.5px;
+    padding: 15px 30px;
+	color:white; 
+}
+
+#logout_button_navbar{
+    display: none;
+}
+
+.genere-flex-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+}
+.genere-flex-box-name{
+    width: 20vw;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    background-color: #004266;
+    color:white;
+    border-radius: 10px;
+    margin-right: 75px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2vw;
+}
+
+
+
+
+.news-flex-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+}
+
+.news-flex-box-article {
+    width: 30vw;
+    margin: 30px;
+}
+
+.news-flex-box-article a{
+    color:#004266;
+}
+
+
+.country-flex-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+}
+
+
+.country-flex-box-name{
+    width: 20vw;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    background-color: #068fda;
+    color:white;
+    border-radius: 10px;
+    margin-right: 75px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2vw;
+}
+
+
+
+
+#TableStationImage{
+    width: 5em;
+    height: 4.5em;
+}
+
+.radio-player-box{
+    margin-bottom: 5%;
+}
+
+.recommened-stations-box{
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+footer{
+    color: white;
+}
+
+
+
+
