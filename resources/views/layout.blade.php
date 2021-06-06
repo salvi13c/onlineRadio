@@ -26,6 +26,7 @@
         firebase.initializeApp(firebaseConfig);
     </script>
     <script src="{{ asset('/js/login.js') }}"></script>
+    <script src="{{ asset('/js/dbcrud.js') }}"></script>
 </head>
 <header>
     @include('header')

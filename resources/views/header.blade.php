@@ -15,10 +15,10 @@
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/radio">Explore</a>
+          <a class="nav-link" href="/stations">Explore</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/topcharts">Top 100</a>
+          <a class="nav-link" href="/topcharts">Top charts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/news">News</a>
@@ -26,6 +26,11 @@
         @if (session()->has('userUidd'))
         <li class="nav-item">
           <a class="nav-link" href="/news">My stations</a>
+        </li>
+        @endif
+        @if (session()->has('userUidd') && session('userLevel')=='admin')
+        <li class="nav-item">
+          <a class="nav-link" href="/adminpanel">Administration Panel</a>
         </li>
         @endif
         <li class="nav-item">
@@ -36,8 +41,8 @@
         
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item  mx-2">
-          <div class="nav-link" id=email_navbar>
+        <li class="nav-item  mx-2 my-auto">
+          <a class="nav-link" id=email_navbar href="/user/profile">
         </li>
         <li class="nav-item  mx-2">
           <a class="btn logout-btn btn-primary" id="logout_button_navbar" onclick="logout()"class="btn btn-primary">Logout</a>

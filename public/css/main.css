@@ -111,7 +111,7 @@ border:none;
 }
 
 
-.top-chart-table th{
+.top-chart-table,.settings-table th{
     color:#004266;
 }
 
@@ -166,7 +166,7 @@ input[type=password] {
     flex-flow: row wrap;
     justify-content: right;
 }
-.genere-flex-box-name{
+.genere-flex-box-name, .genere-flex-box-more{
     width: 20vw;
     padding-left: 1em;
     padding-top: 1em;
@@ -179,6 +179,8 @@ input[type=password] {
     margin-bottom: 20px;
     font-size: 2vw;
 }
+
+
 
 
 
@@ -206,7 +208,7 @@ input[type=password] {
 }
 
 
-.country-flex-box-name{
+.country-flex-box-name, .country-flex-box-more{
     width: 20vw;
     padding-left: 1em;
     padding-top: 1em;
@@ -240,6 +242,30 @@ input[type=password] {
 footer{
     color: white;
 }
+
+
+.crud-action-buttons{
+    margin-bottom: 1.5em;
+}
+
+.crud-add-action-buttons{
+    padding: 8px 15px;
+    background-color: #266df0;
+    border-color: #266df0;
+}
+
+.crud-edit-action-buttons{
+    padding: 8px 15px;
+    background-color: #a3f30e;
+    border-color: #a3f30e;
+}
+
+.crud-delete-action-buttons{
+    padding: 8px 15px;
+    background-color: #e21111;
+    border-color: #e21111;
+}
+
 
 
 

@@ -18,7 +18,7 @@ class UserSessionController extends Controller
         if ($status=="sessionstart"){
             $this->sessionStart($uidd);
         }else if ($status=="sessionregister"){
-            //$this->sessionRegister($uidd,$name,$email);
+            $this->sessionRegister($uidd,$name,$email);
             $this->sessionStart($uidd);
         }else if ($status=="sessiondown"){
             $this->sessionDown();
@@ -28,11 +28,13 @@ class UserSessionController extends Controller
     }
 
     public function sessionStart($uidd){
-        session(['userUidd' => $uidd]);
+        session(['userUidd' => $uidd,
+        'userLevel' => $this->getUserLevel($uidd)]);
     }
 
     public function sessionDown(){
         session()->forget('userUidd');
+        session()->forget('userLevel');
     }
 
     public function sessionRegister($uidd,$name,$email){
@@ -44,6 +46,11 @@ class UserSessionController extends Controller
             'favourite_stations'=>'[]',
             'playlist_stations'=>'[]',
         ]);
+    }
+
+    public function getUserLevel($uidd){
+        $user = DB::select("SELECT user_level from users_table where uidd='$uidd'");
+        return $user[0]->user_level;
     }
     
 

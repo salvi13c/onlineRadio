@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class RadioPageController extends Controller
+class StationsPageController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,7 +16,7 @@ class RadioPageController extends Controller
     public function __invoke(Request $request)
     {
         $popularStations = DB::select('SELECT * from stations');
-        return view('radio', [
+        return view('stations', [
             'popularStationsList' => $popularStations,
             'newsStationsList' => $this->getStations('News'),
             'popStationsList' => $this->getStations('Pop'),
@@ -35,12 +35,12 @@ class RadioPageController extends Controller
     }
 
     public function getGenere(){
-        $generes = DB::select("SELECT * from generes");
+        $generes = DB::select("SELECT * from generes LIMIT 7");
         return $generes;
     }
 
     public function getCountries(){
-        $generes = DB::select("SELECT * from countries");
+        $generes = DB::select("SELECT * from countries LIMIT 7");
         return $generes;
     }
 }

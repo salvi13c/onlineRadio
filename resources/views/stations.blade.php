@@ -42,14 +42,16 @@
 <h1>Explore Generes:</h1>
 <div class="genere-flex-box my-5">
   @foreach ($generesList as $genere)
-  <div class="genere-flex-box-name" type="button"  onclick="window.open('/radio/stationsbygenere/{{ $genere->name }}','_self')">{{ $genere->name }}</div>
+  <div class="genere-flex-box-name" type="button"  onclick="window.open('/stations/bygenere/{{ $genere->name }}','_self')">{{ $genere->name }}</div>
   @endforeach
+  <div class="genere-flex-box-name" type="button" onclick="window.open('/list/generes','_self')">All Generes</div>
 </div>
 <h1>Explore By Countries</h1>
 <div class="country-flex-box my-5">
   @foreach ($countriesList as $country)
-  <div class="country-flex-box-name" type="button"  onclick="window.open('/radio/stationsbycountry/{{ $country->name }}','_self')">{{ $country->name }}</div>
+  <div class="country-flex-box-name" type="button"  onclick="window.open('/stations/bycountry/{{ $country->name }}','_self')">{{ $country->name }}</div>
   @endforeach
+  <div class="country-flex-box-more" type="button" onclick="window.open('/list/countries','_self')">All Conuntries</div>
 </div>
 
 

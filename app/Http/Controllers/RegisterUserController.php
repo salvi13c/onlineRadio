@@ -9,6 +9,10 @@ class RegisterUserController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return view('register');
+        if (!session()->has('userUidd')){
+            return view('register');
+        }else{
+            return redirect('/');
+        }
     }
 }

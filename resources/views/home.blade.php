@@ -26,7 +26,7 @@
 <h3>Featured Stations</h3>
 <div class="row flex-row flex-nowrap popularstations">
     @foreach ($popularStationsList as $station)
-    <div class="col-3" type="button" id="stationElement" onclick="window.open('/detailsstation/{{ $station->id }}','_self')')">
+	<div class="col-3" type="button" id="stationElement" onclick="window.open('/detailsstation/{{ $station->id }}','_self')">
       <div class="card custom-card" id="stationCard">
         <img class="card-img-top" src="{{ $station->image }}" alt="Radio 1">
         <div class="card-body">

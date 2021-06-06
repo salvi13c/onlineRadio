@@ -22,8 +22,8 @@ class StationsMigration extends Migration
             $table->bigInteger('country')->unsigned();
             $table->string('url');
             $table->timestamps();
-            $table->foreign('genere')->references('id')->on('generes');
-            $table->foreign('country')->references('id')->on('countries');
+            $table->foreign('genere')->references('id')->on('generes')->onDelete('cascade');
+            $table->foreign('country')->references('id')->on('countries')->onDelete('cascade');
 
         });
     }

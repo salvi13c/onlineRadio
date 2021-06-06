@@ -9,6 +9,10 @@ class LoginController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return view('login');
+        if (!session()->has('userUidd')){
+            return view('login');
+        }else{
+            return redirect('/');
+        }
     }
 }

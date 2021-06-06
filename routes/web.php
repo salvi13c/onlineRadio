@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RadioPageController;
+use App\Http\Controllers\stationsPageController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterUserController;
@@ -12,6 +12,14 @@ use App\Http\Controllers\aboutUsController;
 use App\Http\Controllers\userSessionController;
 use App\Http\Controllers\genereStationListController;
 use App\Http\Controllers\countryStationListController;
+use App\Http\Controllers\Administration\AdministrationPanelController;
+use App\Http\Controllers\Administration\AdministrationCRUDQueryController;
+use App\Http\Controllers\Administration\AdministrationAddCountriesController;
+use App\Http\Controllers\Administration\AdministrationAddGeneresController;
+use App\Http\Controllers\Administration\AdministrationAddStationsController;
+use App\Http\Controllers\ListCountriesController;
+use App\Http\Controllers\ListGeneresController;
+use App\Http\Controllers\UserProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +33,9 @@ use App\Http\Controllers\countryStationListController;
 
 Route::get('/', homePageController::class);
 Route::get('/home', homePageController::class);
-Route::get('/radio', radioPageController::class);
-Route::get('/radio/stationsbygenere/{name}',genereStationListController::class);
-Route::get('/radio/stationsbycountry/{name}',countryStationListController::class);
+Route::get('/stations', stationsPageController::class);
+Route::get('/stations/bygenere/{name}',genereStationListController::class);
+Route::get('/stations/bycountry/{name}',countryStationListController::class);
 Route::get('/news', newsController::class);
 Route::get('/login',loginController::class);
 Route::get('/register',registerUserController::class);
@@ -35,4 +43,21 @@ Route::get('/topcharts',topChartsController::class);
 Route::get('/detailsstation/{id}',detailsStationController::class);
 Route::get('/about',aboutUsController::class);
 Route::get('/login/setsession/{status}/{uidd}/{name?}/{email?}',userSessionController::class);
+
+Route::get('/list/generes',listGeneresController::class);
+Route::get('/list/countries',listCountriesController::class);
+Route::get('/user/profile',userProfileController::class);
+
+//Admin Routes
+Route::get('/adminpanel',administrationPanelController::class);
+Route::get('/adminpanel/crud/',administrationCRUDQueryController::class);
+Route::get('/adminpanel/crud/add/station',administrationAddStationsController::class);
+Route::get('/adminpanel/crud/add/country',administrationAddCountriesController::class);
+Route::get('/adminpanel/crud/add/genere',AdministrationAddGeneresController::class);
+
+
+Route::get('/adminpanel/crud/add/{type}/{action}/{name}/{description}',AdministrationCRUDQueryController::class);
+Route::get('/adminpanel/crud/add/{type}/{action}/{name}/{continent}/{language}',AdministrationCRUDQueryController::class);
+
+Route::get('/adminpanel/crud/delete/{type}/{action}/{id}',AdministrationCRUDQueryController::class);
 
