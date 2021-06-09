@@ -7,6 +7,7 @@
     <h4><a href="{{$article->link}}" target="_blank">{{$article->title}}</a></h4>
     <!--<br><img src="{{$article->guid}}">--><br>{{$article->description}}<br>
     <div class="time"><i>{{$article->date}}</i></div>
+    <hr class="mt-3 mb-3"/>
 </div>
 @endforeach
 </div>

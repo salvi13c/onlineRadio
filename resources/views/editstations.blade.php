@@ -1,16 +1,17 @@
 @extends('layout')
 @section('content')
-<h1>Add Station</h1>
+<h1>Edit Station</h1>
+
 <div class="container-fluid">
     <div id="user_login">
       <div class="form-group p-2">
-        <input type="text" id="name_field" class="form-control" placeholder="Name" required>
+        <input type="text" id="name_field" class="form-control" value="{{$name}}"  placeholder="Name" required>
       </div>
       <div class="form-group p-2">
-        <input type="text" id="description_field" class="form-control" placeholder="Description" required>
+        <input type="text" id="description_field" class="form-control" value="{{$description}}"  placeholder="Description" required>
       </div>
       <div class="form-group p-2">
-        <input type="text" id="image_field" class="form-control" placeholder="Image" required>
+        <input type="text" id="image_field" class="form-control" value="{{$image}}" placeholder="Image" required>
       </div>
       <div class="form-group p-2">
         Country: <select name="countries" id="countries_field">
@@ -27,9 +28,9 @@
         </select>
       </div>
       <div class="form-group p-2">
-        <input type="text" id="url_field" class="form-control" placeholder="URL" required>
+        <input type="text" id="url_field" class="form-control" value="{{$url}}" placeholder="URL" required>
       </div>
-      <button id="add_station_button" class="btn font-weight-bold my-3" onclick="addStation()" >Add</button>
+      <button id="edit_station_button" class="btn font-weight-bold my-3" onclick="editStation({{$id}})" >Add</button>
     </div>
   </div>
 @endsection

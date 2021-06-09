@@ -9,7 +9,7 @@
       <div class="form-group p-2">
         <input type="text" id="description_field" class="form-control" placeholder="Description" required>
       </div>
-      <button id="add_genere_button" class="btn font-weight-bold" onclick="addGenere()" >Add</button>
+      <button id="add_genere_button" class="btn font-weight-bold" onclick="addGenere()" >Edit</button>
     </div>
   </div>
 @endsection

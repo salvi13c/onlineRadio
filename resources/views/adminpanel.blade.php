@@ -46,12 +46,17 @@
                                 <td><b>{{ $station->id }}<b></td>
                                     <td>{{ $station->name }}</td>
                                     <td>{{ $station->description }}</td>
-                                    <td><img src="{{ $station->image }}" alt="image" width="50" height="50"></td>
+                                    <td><img src="{{$station->image}}" alt="image" width="50" height="50"></td>
                                     <td>{{ $station->genere_name }}</td>
                                     <td>{{ $station->country_name }}</td>
                                     <td>{{ $station->url }}</td>
-                                    <td><button class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar"  class="btn btn-primary p-4">Edit</a></td>
-                                    <td><button class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" onclick="deleteStation({{ $station->id }})"  class="btn btn-primary p-4">Delete</a></td>
+                                    <td><a class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar"  
+                                        href="/adminpanel/crud/edit/station/{{ base64_encode($station->name) }}
+                                        /{{ base64_encode($station->description) }}/{{ base64_encode($station->image) }}
+                                        /{{ base64_encode($station->country_name )}}/{{ base64_encode($station->genere_name) }}
+                                        /{{ base64_encode($station->url) }}/{{ base64_encode($station->id)}}" class="btn btn-primary p-4">Edit</a></td>
+                                    <td><a class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" 
+                                        onclick="deleteStation({{ $station->id }})"  class="btn btn-primary p-4">Delete</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -76,8 +81,8 @@
                                         <td><b>{{ $genere->id }}<b></td>
                                             <td>{{ $genere->name }}</td>
                                             <td>{{ $genere->description }}</td>
-                                            <td><button class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar"  class="btn btn-primary p-4">Edit</a></td>
-                                            <td><button class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" onclick="deleteGenere({{ $genere->id }})"  class="btn btn-primary p-4">Delete</a></td>
+                                            <td><a class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar" href="/adminpanel/crud/edit/genere/{{ base64_encode($genere->name) }}/{{ base64_encode($genere->description)}}/{{ base64_encode($genere->id)}}"  class="btn btn-primary p-4">Edit</a></td>
+                                            <td><a class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" onclick="deleteGenere({{ $genere->id }})"  class="btn btn-primary p-4">Delete</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -106,8 +111,8 @@
                                                 <td>{{ $country->name }}</td>
                                                 <td>{{ $country->continent }}</td>
                                                 <td>{{ $country->language }}</td>
-                                                <td><button class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar"  class="btn btn-primary p-4">Edit</a></td>
-                                                <td><button class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" onclick="deleteCountry({{ $country->id }})"   class="btn btn-primary p-4">Delete</a></td>
+                                                <td><a class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar" href="/adminpanel/crud/edit/country/{{ base64_encode($country->name) }}/{{ base64_encode($country->continent) }}/{{ base64_encode($country->language)}}/{{ base64_encode($country->id)}}"  class="btn btn-primary p-4">Edit</a></td>
+                                                <td><a class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar" onclick="deleteCountry({{ $country->id }})"   class="btn btn-primary p-4">Delete</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -135,8 +140,8 @@
                                                     <td>{{ $song->song }}</td>
                                                     <td>{{ $song->artist }}</td>
                                                     <td>Proin eu eleifend nibh</td>
-                                                    <td><button class="btn login-btn btn-primary crud-edit-action-buttons"  class="btn btn-primary p-4">Edit</a></td>
-                                                    <td><button class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar"  class="btn btn-primary p-4">Delete</a></td>
+                                                    <td><a class="btn login-btn btn-primary crud-edit-action-buttons"  class="btn btn-primary p-4">Edit</a></td>
+                                                    <td><a class="btn login-btn btn-primary crud-delete-action-buttons" id="login_button_navbar"  class="btn btn-primary p-4">Delete</a></td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

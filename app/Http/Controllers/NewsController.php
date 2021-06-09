@@ -14,11 +14,6 @@ class NewsController extends Controller
         ]);
     }
 
-    function makeFeed(){
-        
-    }
-
-
     function feed($feedURL){
         $i = 0; 
         $url = $feedURL; 

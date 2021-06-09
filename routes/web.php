@@ -17,9 +17,13 @@ use App\Http\Controllers\Administration\AdministrationCRUDQueryController;
 use App\Http\Controllers\Administration\AdministrationAddCountriesController;
 use App\Http\Controllers\Administration\AdministrationAddGeneresController;
 use App\Http\Controllers\Administration\AdministrationAddStationsController;
+use App\Http\Controllers\Administration\AdministrationEditStationsController;
+use App\Http\Controllers\Administration\AdministrationEditCountriesController;
+use App\Http\Controllers\Administration\AdministrationEditGeneresController;
 use App\Http\Controllers\ListCountriesController;
 use App\Http\Controllers\ListGeneresController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\SearchStationsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,10 +58,20 @@ Route::get('/adminpanel/crud/',administrationCRUDQueryController::class);
 Route::get('/adminpanel/crud/add/station',administrationAddStationsController::class);
 Route::get('/adminpanel/crud/add/country',administrationAddCountriesController::class);
 Route::get('/adminpanel/crud/add/genere',AdministrationAddGeneresController::class);
+Route::get('/adminpanel/crud/edit/station/{name}/{description}/{image}/{country}/{genere}/{url}/{id}',AdministrationEditStationsController::class);
+Route::get('/adminpanel/crud/edit/country/{name}/{continent}/{language}/{id}',AdministrationEditCountriesController::class);
+Route::get('/adminpanel/crud/edit/genere/{name}/{description}/{id}',AdministrationEditGeneresController::class);
 
 
 Route::get('/adminpanel/crud/add/{type}/{action}/{name}/{description}',AdministrationCRUDQueryController::class);
 Route::get('/adminpanel/crud/add/{type}/{action}/{name}/{continent}/{language}',AdministrationCRUDQueryController::class);
-
+Route::get('/adminpanel/crud/add/{type}/{action}/{name}/{description}/{image}/{country}/{genere}/{url}',AdministrationCRUDQueryController::class);
+Route::get('/adminpanel/crud/update/{type}/{action}/{name}/{description}/{id}',AdministrationCRUDQueryController::class);
+Route::get('/adminpanel/crud/update/{type}/{action}/{name}/{continent}/{language}/{id}',AdministrationCRUDQueryController::class);
+Route::get('/adminpanel/crud/update/{type}/{action}/{name}/{description}/{image}/{country}/{genere}/{url}/{id}',AdministrationCRUDQueryController::class);
 Route::get('/adminpanel/crud/delete/{type}/{action}/{id}',AdministrationCRUDQueryController::class);
+
+
+//Search 
+Route::get('/search',SearchStationsController::class);
 
