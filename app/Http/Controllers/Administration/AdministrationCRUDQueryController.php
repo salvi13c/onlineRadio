@@ -21,20 +21,47 @@ class AdministrationCRUDQueryController extends Controller
     public function crud($request){
         $type = $request->type;
         $action = $request->action;
-        $name = $request->name;
         if ($action=="insert"){
             if ($type=="genere"){
+                $name = $request->name;
                 $description = $request->description;
                 $this->addGenere($name,$description);
             }else if ($type=="country"){
+                $name = $request->name;
                 $continent = $request->continent;
                 $language = $request->language;
                 $this->addCountry($name,$continent,$language);
             }else if ($type=="station"){
-                //$this->addStation($name,$continent,$language);
+                $name = base64_decode($request->name);
+                $description = base64_decode($request->description);
+                $image = base64_decode($request->image);
+                $country = base64_decode($request->country);
+                $genere = base64_decode($request->genere);
+                $url = base64_decode($request->url);
+                $this->addStation($name,$description,$image,$country,$genere,$url);
             }
         }else if ($action=="edit"){
-
+            if ($type=="genere"){
+                $id = $request->id;
+                $name = $request->name;
+                $description = $request->description;
+                $this->editGenere($name,$description,$id);
+            }else if ($type=="country"){
+                $id = $request->id;
+                $name = $request->name;
+                $continent = $request->continent;
+                $language = $request->language;
+                $this->editCountry($name,$continent,$language,$id);
+            }else if ($type=="station"){
+                $id = base64_decode($request->id);
+                $name = base64_decode($request->name);
+                $description = base64_decode($request->description);
+                $image = base64_decode($request->image);
+                $country = base64_decode($request->country);
+                $genere = base64_decode($request->genere);
+                $url = base64_decode($request->url);
+                $this->editStation($name,$description,$image,$country,$genere,$url,$id);
+            }
         }else if ($action=="remove"){
             if ($type=="genere"){
                 $id = $request->id;
@@ -60,24 +87,51 @@ class AdministrationCRUDQueryController extends Controller
     public function addGenere($name,$description){
         DB::table('generes')->insert([
             'name' => $name,
-            'description' => $description
+            'description' => $description,
         ]);
     }
 
-    public function addStation(){
-
+    public function addStation($name,$description,$image,$country,$genere,$url){
+        DB::table('stations')->insert([
+            'name' => $name,
+            'description' => $description,
+            'image' => $image,
+            'genere' => $genere,
+            'country' => $country,
+            'url' => $url
+        ]);
     }
 
-    public function editCountry(){
-        
+    public function editCountry($name,$continent,$language,$idCountry){
+        DB::table('countries')
+            ->where('id',intval($idCountry))
+            ->update([
+                'name' => $name,
+                'continent' => $continent,
+                'language' => $language
+            ]);
     }
 
-    public function editStation(){
-
+    public function editGenere($name,$description,$idGenere){
+        DB::table('generes')
+            ->where('id',intval($idGenere))
+            ->update([
+                'name' => $name,
+                'description' => $description
+            ]);
     }
 
-    public function editLanguage(){
-
+    public function editStation($name,$description,$image,$country,$genere,$url,$idStation){
+        DB::table('stations')
+            ->where('id',intval($idStation))
+            ->update([
+                'name' => $name,
+                'description' => $description,
+                'image' => $image,
+                'genere' => $genere,
+                'country' => $country,
+                'url' => $url
+            ]);
     }
 
     public function deleteGenere($id){

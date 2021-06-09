@@ -34,6 +34,7 @@ function login(){
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    alert(errorMessage);
   });
 
 }
@@ -48,7 +49,25 @@ function register(){
   var email = document.getElementById("email_field").value;
   var password = document.getElementById("password_field").value;
   var repeatPassword = document.getElementById("repeat_password_field").value;
-  if (password==repeatPassword){
+  var verified=true;
+
+  if (name==""){
+    window.alert("The name is empty");
+    verified=false;
+  }
+
+
+  if (password!=repeatPassword){
+    window.alert("The passwords doesen't match");
+    verified=false;
+  }
+
+  if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+    window.alert("The email is invalid")
+    verified=false
+  }
+
+  if (verified==true){
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
@@ -61,8 +80,6 @@ function register(){
       var errorMessage = error.message;
       window.alert("Error : " + errorMessage);
     });
-  }else{
-    window.alert("The passwords doesen't match")
   }
   
 }
