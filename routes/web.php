@@ -23,10 +23,14 @@ use App\Http\Controllers\Administration\AdministrationEditGeneresController;
 use App\Http\Controllers\ListCountriesController;
 use App\Http\Controllers\ListGeneresController;
 use App\Http\Controllers\UserProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\Search\SearchStationsController;
 use App\Http\Controllers\Search\SearchStationsResultsController;
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\DeleteHistorialController;
+=======
+use App\Http\Controllers\SearchStationsController;
+>>>>>>> master
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,5 +83,8 @@ Route::get('/adminpanel/crud/delete/{type}/{action}/{id}',AdministrationCRUDQuer
 
 //Search 
 Route::get('/search',SearchStationsController::class);
+<<<<<<< HEAD
 Route::post('/search/results',SearchStationsResultsController::class);
+=======
+>>>>>>> master
 
