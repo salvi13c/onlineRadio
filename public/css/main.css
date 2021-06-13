@@ -4,9 +4,15 @@ body{
     flex-direction: column;
 }
 
+h3{
+    font-size: 1.5em;
+}
+
 #content{
     margin-top: 4em;
 }
+
+
 
 
 #mainpagetitle{
@@ -52,7 +58,7 @@ body{
 }
 
 .login-btn{
-    padding: 10px 25px;
+    padding: 10px 29px;
     background-color: #aff540;
     border-color: #aff540;
 }
@@ -111,7 +117,7 @@ border:none;
 }
 
 
-.top-chart-table,.settings-table th{
+.top-chart-table,.settings-table,.historial-table,.search-table th{
     color:#004266;
 }
 
@@ -128,7 +134,7 @@ input[type=password] {
 }
 
 #register_button,#login_button,#add_country_button,#add_genere_button,#add_station_button,
-#edit_station_button,#edit_genere_button,#edit_country_button {
+#edit_station_button,#edit_genere_button,#edit_country_button,#delete_historial_button {
     border: 0 none;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -149,12 +155,12 @@ input[type=password] {
 	color:#004266; 
 }
 
-#favourite_button{
+#details_button{
     background-color: #004266;
     width: auto;
     border-radius: 0;
     letter-spacing: 0.5px;
-    padding: 15px 30px;
+    padding: 15px 39px;
 	color:white; 
 }
 
@@ -226,9 +232,14 @@ input[type=password] {
 
 
 
-#TableStationImage{
+#TableStationImage, #TableStationImageHistorial{
     width: 5em;
     height: 4.5em;
+}
+
+#TableStationImage, #TableStationImageHistorialProfile{
+    width: 4em;
+    height: 3em;
 }
 
 .radio-player-box{
@@ -270,6 +281,104 @@ footer{
 #search_image{
     margin-right: 10px;
 }
+
+#table-box{
+    overflow-x: scroll;
+}
+
+#tableHeadColor{
+    color: crimson;
+}
+#positionTopChart{
+    font-size: 1.5em;
+}
+
+
+@media only screen and (max-width: 900px) {
+
+    h1{
+        font-size: 2em;
+    }
+    h4{
+        font-size: 0.9em;
+    }
+
+
+    .country-flex-box-name, .country-flex-box-more{
+        width: 40vw;
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        background-color: #068fda;
+        color:white;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 5vw;
+    }
+
+    .genere-flex-box-name, .genere-flex-box-more{
+        width: 40vw;
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        background-color: #004266;
+        color:white;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 5vw;
+    }
+
+  
+      
+
+      #stationElement{
+        width: 10em;
+        height: 11em;
+        margin-left:1em;
+        margin-right:1em;
+    }
+    
+    .card-img-top{
+        width: auto;
+        height: 6em;
+    }
+
+    .news-flex-box-article {
+        width: 100vw;
+    }
+
+    .login-btn,.register-btn,.logout-btn{
+        font-size: 0.7em;
+        letter-spacing: 0.25px;
+        margin-bottom: 7px;
+        display: block;
+    }
+
+
+    .login-btn{
+        padding: 10px 10px;
+    }
+    
+    .register-btn{
+        padding: 10px 10px;
+    }
+    
+    .logout-btn{
+        padding: 10px 10px;
+    }
+
+    
+
+  
+
+
+    
+  }
+
 
 
 

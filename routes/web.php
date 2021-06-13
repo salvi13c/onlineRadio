@@ -23,7 +23,10 @@ use App\Http\Controllers\Administration\AdministrationEditGeneresController;
 use App\Http\Controllers\ListCountriesController;
 use App\Http\Controllers\ListGeneresController;
 use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\SearchStationsController;
+use App\Http\Controllers\Search\SearchStationsController;
+use App\Http\Controllers\Search\SearchStationsResultsController;
+use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\DeleteHistorialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +54,8 @@ Route::get('/login/setsession/{status}/{uidd}/{name?}/{email?}',userSessionContr
 Route::get('/list/generes',listGeneresController::class);
 Route::get('/list/countries',listCountriesController::class);
 Route::get('/user/profile',userProfileController::class);
+Route::get('/historial',HistorialController::class);
+Route::get('/historial/delete',DeleteHistorialController::class);
 
 //Admin Routes
 Route::get('/adminpanel',administrationPanelController::class);
@@ -74,4 +79,5 @@ Route::get('/adminpanel/crud/delete/{type}/{action}/{id}',AdministrationCRUDQuer
 
 //Search 
 Route::get('/search',SearchStationsController::class);
+Route::post('/search/results',SearchStationsResultsController::class);
 

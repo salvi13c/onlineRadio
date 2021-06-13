@@ -5,11 +5,13 @@
 		<div class="text-center">
 			<h1 id="mainpagetitle" class="p-4">Welcome to music radio player</h1>
 		</div>
-		<form action="/action_page.php">
+		<form action="/search/results" method="post">
+			@csrf
 			<div class="form-row">
 				<div class="form-group col-12">
 					<input type="text" class="form-control p-4" id="searchstations"
-					placeholder="SEARCH STATIONS" name="Search Stations"><br>
+					placeholder="SEARCH STATIONS" name="searchstations">
+					<input type="submit" style="visibility: hidden;" /><br>
 					<table class="table table-bordered table-hover">
 						<tbody>
 						</tbody>

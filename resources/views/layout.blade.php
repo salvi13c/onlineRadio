@@ -28,6 +28,7 @@
     </script>
     <script src="{{ asset('/js/login.js') }}"></script>
     <script src="{{ asset('/js/dbcrud.js') }}"></script>
+    <script src="{{ asset('/js/historial.js') }}"></script>
 </head>
 <header>
     @include('header')

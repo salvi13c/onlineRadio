@@ -2,24 +2,22 @@
 @section('content')
 <div class="row radio-player-box bg-light p-5">
     <div class="col-3 m-2">
-        <img src="{{ $station[0]->station_image }}" width="100%">
+        <img src="{{ $stationElement[0]->station_image }}" width="100%">
     </div>
     <div class="col-6 m-2">
-      <h1> {{ $station[0]->station_name }}</h1>
-        <div id="detailsStationdescription">
-            <!--<b>Genere: </b>{{ $station[0]->genere_name}}-->
-        </div>
+      <h1> {{ $stationElement[0]->station_name }}</h1>
         <br>
         <audio autoplay controls='controls'> 
-            <source src='{{ $station[0]->station_url}}' type='audio/mpeg'/>
+            <source src='{{ $stationElement[0]->station_url}}' type='audio/mpeg'/>
         </audio>
     </div>
     <div class="col-1 m-2">
       <button id="share_button" class="btn font-weight-bold my-3" data-toggle="modal" data-target="#shareModal">Share</button>
-      <button type="button" id="favourite_button" class="btn font-weight-bold my-3"  >
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-          <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-        </svg>Favourite </button>
+      <button type="button" id="details_button" class="btn font-weight-bold my-3" data-toggle="modal" data-target="#detailsModal"  >
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+          <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+          <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+        </svg>Details </button>
     </div>
 </div>
 <hr class="mt-3 mb-3 separation-line"/>
@@ -47,14 +45,24 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        Description
+      
+        <b>Description:</b> {{ $stationElement[0]->station_description }}
+        <br>
+        <b>Station Url:</b> {{$stationElement[0]->station_url}}
+        <br>
+        <b>Genere:</b>  {{$stationElement[0]->station_genere}}
+        <br>
+        <b>Country:</b> {{$stationElement[0]->station_country}}
+        <br> 
+        <b>Continent:</b> {{$stationElement[0]->station_continent}}
+        <br> 
+        <b>Language:</b> {{$stationElement[0]->station_language}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 
@@ -66,14 +74,21 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        Social media buttons
+        <a href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+      </a>
+      <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+      <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+  </a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 

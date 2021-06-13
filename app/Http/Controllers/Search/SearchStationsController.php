@@ -1,7 +1,6 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Search;
 use Illuminate\Http\Request;
-use DB;
 
 
 
@@ -20,7 +19,7 @@ class SearchStationsController extends Controller
     {  
         if($request->ajax()){
             $output="";
-            $stationsList=DB::table('stations')->where('name','LIKE','%'.$request->search."%")->get();
+            $stationsList=\Illuminate\Support\Facades\DB::table('stations')->where('name','LIKE','%'.$request->search."%")->get();
             if($stationsList && !$request->search=="") {    
                 foreach ($stationsList as $key => $stations) {  
                     $output.='<tr>'.

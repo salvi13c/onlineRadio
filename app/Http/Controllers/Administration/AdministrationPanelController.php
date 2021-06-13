@@ -13,8 +13,7 @@ class AdministrationPanelController extends Controller
             return view('adminpanel', [
                 'stationsList' => $this->getStations(),
                 'generesList' => $this->getGeneres(),
-                'countriesList' => $this->getCountries(),
-                'topChartsList' => $this->getCharts(),
+                'countriesList' => $this->getCountries()
             ]);
         }else{
             return redirect('/');
@@ -36,11 +35,6 @@ class AdministrationPanelController extends Controller
     public function getCountries(){
         $generes = DB::select("SELECT * from countries");
         return $generes;
-    }
-
-    public function getCharts(){
-        $stations = DB::select("SELECT tc.`id`, tc.`song`, tc.`artist`from topcharts tc");
-        return $stations;
     }
 
 }

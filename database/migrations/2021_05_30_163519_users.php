@@ -18,8 +18,6 @@ class Users extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('user_level');
-            $table->jsonb('favourite_stations');
-            $table->jsonb('playlist_stations');
             $table->timestamps();
 
         });
