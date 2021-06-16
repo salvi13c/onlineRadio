@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Administration;
+namespace App\Http\Controllers\Login;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AdministrationAddCountriesController extends Controller
+class ChangePasswordController extends Controller
 {
     public function __invoke(Request $request)
     {
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
-            return view('addcountries');
+        if (session()->has('userUuid')){
+            return view('changepassword');
         }else{
             return redirect('/');
         }
-    
     }
-
 }
+

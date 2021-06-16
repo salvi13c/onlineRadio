@@ -84,6 +84,34 @@ function register(){
   
 }
 
+function changePassword(){
+  var password = document.getElementById("password_field").value;
+  var repeatPassword = document.getElementById("repeat_password_field").value;
+  var verified=true;
+
+  if (password=="" || repeatPassword==""){
+    window.alert("The name is empty");
+    verified=false;
+  }
+  if (password!=repeatPassword){
+    window.alert("The passwords doesen't match");
+    verified=false;
+  }
+
+  if (verified==true){
+    let user = firebase.auth().currentUser;
+    user.updatePassword(password).then(() => {
+      window.alert("Password changed successfuly");
+      document.location ="/";
+    }, (error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      window.alert("Error : " + errorMessage);
+    });
+  }
+
+}
+
 function logout(){
   var uid=firebase.auth().currentUser.uid;
   firebase.auth().signOut();

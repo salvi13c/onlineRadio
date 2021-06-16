@@ -10,7 +10,7 @@ class TopChartsController extends Controller
 
     public function __invoke(Request $request){
         return view('topchartlist', [
-            'topchartlist' => $this->feed("https://rss.itunes.apple.com/api/v1/us/apple-music/top-songs/all/50/explicit.rss")
+            'topchartlist' => $this->feed($this->getTopChartsUrl())
         ]);
     }
 
@@ -36,5 +36,10 @@ class TopChartsController extends Controller
             }
         }
     return $topchartlist;
+    }
+
+    function getTopChartsUrl(){
+        $topCharts = DB::select("SELECT * from settings where config_name='rss_top_charts_url'");
+        return $topCharts[0]->value;
     }
 }

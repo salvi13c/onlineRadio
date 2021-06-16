@@ -143,6 +143,21 @@ function editStation(id){
     }
 }
 
+function editSettings(id){
+    let verified=true;
+    let value=document.getElementById("value_field").value;
+    if (value==""){
+        verified=false;
+    }
+
+
+    if (verified==true){
+        document.location ="/adminpanel/crud/update/setting/edit/"+btoa(value)+"/"+btoa(id)
+    }else{
+        alert("One or more of the fields are empty")
+    }
+}
+
 function deleteCountry(id){
     if (confirm("Are you sure you want to delete the country ?")) {
         document.location ="/adminpanel/crud/delete/country/remove/"+id;

@@ -23,7 +23,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/news">News</a>
         </li>
-        @if (session()->has('userUidd'))
+        @if (session()->has('userUuid'))
         <li class="nav-item">
           <a class="nav-link" href="/news">My stations</a>
         </li>
@@ -31,7 +31,7 @@
           <a class="nav-link" href="/historial">Historial</a>
         </li>
         @endif
-        @if (session()->has('userUidd') && session('userLevel')=='admin')
+        @if (session()->has('userUuid') && session('userLevel')=='admin')
         <li class="nav-item">
           <a class="nav-link" href="/adminpanel">Administration Panel</a>
         </li>

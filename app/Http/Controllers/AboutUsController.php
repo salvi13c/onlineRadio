@@ -11,7 +11,7 @@ class AboutUsController extends Controller
     {
 
         return view('aboutus', [
-            'userUidd'=> session('userUidd'),
+            'userUuid'=> session('userUuid'),
             'userLevel'=> session('userLevel')
         ]);
         

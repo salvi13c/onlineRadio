@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administration;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,11 +10,12 @@ class AdministrationPanelController extends Controller
 {
     public function __invoke(Request $request)
     {
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
+        if (session()->has('userUuid') && session('userLevel')=='admin'){
             return view('adminpanel', [
                 'stationsList' => $this->getStations(),
                 'generesList' => $this->getGeneres(),
-                'countriesList' => $this->getCountries()
+                'countriesList' => $this->getCountries(),
+                'settingsList' => $this->getSettings()
             ]);
         }else{
             return redirect('/');
@@ -34,6 +36,11 @@ class AdministrationPanelController extends Controller
 
     public function getCountries(){
         $generes = DB::select("SELECT * from countries");
+        return $generes;
+    }
+    
+    public function getSettings(){
+        $generes = DB::select("SELECT * from settings");
         return $generes;
     }
 

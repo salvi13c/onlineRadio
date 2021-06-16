@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administration;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +11,7 @@ class AdministrationCRUDQueryController extends Controller
     public function __invoke(Request $request)
     {
 
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
+        if (session()->has('userUuid') && session('userLevel')=='admin'){
             $this->crud($request);
             return redirect('/adminpanel');
         }else{
@@ -61,6 +62,10 @@ class AdministrationCRUDQueryController extends Controller
                 $genere = base64_decode($request->genere);
                 $url = base64_decode($request->url);
                 $this->editStation($name,$description,$image,$country,$genere,$url,$id);
+            }else if ($type=="setting"){
+                $id = base64_decode($request->id);
+                $value = base64_decode($request->value);
+                $this->editSetting($id,$value);
             }
         }else if ($action=="remove"){
             if ($type=="genere"){
@@ -132,6 +137,14 @@ class AdministrationCRUDQueryController extends Controller
                 'country' => $country,
                 'url' => $url
             ]);
+    }
+
+    public function editSetting($idSetting,$value){
+        DB::table('settings')
+        ->where('id',intval($idSetting))
+        ->update([
+            'value' => $value,
+        ]);
     }
 
     public function deleteGenere($id){

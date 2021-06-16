@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Historial;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,8 +11,8 @@ class DeleteHistorialController extends Controller
 
     public function __invoke(Request $request)
     {
-        $session=session('userUidd');
-        if (session()->has('userUidd')){
+        $session=session('userUuid');
+        if (session()->has('userUuid')){
             $this->deleteHistorial($session);
             return redirect('/historial');
         }else{
@@ -22,7 +23,7 @@ class DeleteHistorialController extends Controller
 
 
     public function deleteHistorial($session){
-        $historial = DB::select("delete from listen_historial where user_uidd='$session'");
+        $historial = DB::select("delete from listen_historial where user_uuid='$session'");
         return $historial;
    }
 }

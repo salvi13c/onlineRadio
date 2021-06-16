@@ -134,7 +134,7 @@ input[type=password] {
 }
 
 #register_button,#login_button,#add_country_button,#add_genere_button,#add_station_button,
-#edit_station_button,#edit_genere_button,#edit_country_button,#delete_historial_button {
+#edit_station_button,#edit_genere_button,#edit_country_button,#delete_historial_button, #show_historial_button, #change_password_button, #send_report_button{
     border: 0 none;
     font-weight: 500;
     letter-spacing: 0.5px;

@@ -120,6 +120,32 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="main-settings">
+                                            <div id="table-box">
+                                                <br>
+                                                <h2>Settings</h2>
+                                                <table class="table settings-table">
+                                                    <thead id="tableHeadColor">
+                                                        <tr>
+                                                            <th><h5>id</h5></th>
+                                                            <th><h5>config_name</h5></th>
+                                                            <th><h5>description</h5></th>
+                                                            <th><h5>value</h5></th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($settingsList as $setting)
+                                                        <tr>
+                                                            <td><b>{{ $setting->id }}<b></td>
+                                                                <td><b>{{ $setting->config_name }}</b></td>
+                                                                <td>{{ $setting->description }}</td>
+                                                                <td>{{ $setting->value }}</td>
+                                                                <td><a class="btn login-btn btn-primary crud-edit-action-buttons" id="login_button_navbar" href="/adminpanel/crud/edit/settings/{{ base64_encode($setting->config_name) }}/{{ base64_encode($setting->value) }}/{{ base64_encode($setting->id)}}"  class="btn btn-primary p-4">Edit</a></td>
+                                                            </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

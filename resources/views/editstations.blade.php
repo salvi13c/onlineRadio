@@ -30,7 +30,7 @@
       <div class="form-group p-2">
         <input type="text" id="url_field" class="form-control" value="{{$url}}" placeholder="URL" required>
       </div>
-      <button id="edit_station_button" class="btn font-weight-bold my-3" onclick="editStation({{$id}})" >Add</button>
+      <button id="edit_station_button" class="btn font-weight-bold my-3" onclick="editStation({{$id}})" >Edit</button>
     </div>
   </div>
 @endsection

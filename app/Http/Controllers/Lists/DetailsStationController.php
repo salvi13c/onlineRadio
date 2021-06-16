@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Lists;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,12 +26,13 @@ class DetailsStationController extends Controller
         }
     }
 
+    //obtiene la lista de estaciones recomendadas (se imprimen unas 10 aleatorias),
     public function getRecommendedStations(){
         $recomendedStations = DB::select('SELECT * from stations ORDER BY RAND() LIMIT 10;');
         return $recomendedStations;
     }
 
-
+    //obtiene los detalles de la estación de radio que se mostrarán en pantalla
     public function getDetailsStation($id){
         $stations = DB::select("SELECT s.`id` as station_id, s.`name` as station_name, s.`description`
         as station_description, s.`url` as station_url, s.`image` as station_image ,g.`name` as station_genere,
@@ -41,6 +43,7 @@ class DetailsStationController extends Controller
         return $stations;
     }
 
+    //Añade las canciones al historial
     public function addToHistorial($stations,$id){
         DB::table('listen_historial')->insert([
             'user_uuid' => session('userUuid'),

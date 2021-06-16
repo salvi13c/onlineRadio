@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Users extends Migration
+class SettingsMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class Users extends Migration
      */
     public function up()
     {
-        Schema::create('users_table', function (Blueprint $table) {
-            $table->text('uuid')->unique(); 
-            $table->string('name');
-            $table->string('email');
-            $table->string('user_level');
-            $table->timestamps();
-
+        Schema::create('settings', function (Blueprint $table) {
+            $table->string('config_name');
+            $table->value('description');
+            $table->value('value');
         });
     }
 
@@ -30,6 +27,6 @@ class Users extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_table');
+        //
     }
 }

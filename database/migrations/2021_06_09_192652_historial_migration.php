@@ -15,11 +15,11 @@ class HistorialMigration extends Migration
     {
         Schema::create('listen_historial', function (Blueprint $table) {
             $table->bigIncrements('id')->unique(); 
-            $table->text('uidd')->unique(); 
+            $table->uuid('uidd')->unique(); 
             $table->bigInteger('station_id')->unsigned();
             $table->timestamp('date')->useCurrent();
             $table->foreign('station_id')->references('id')->on('stations')->onDelete('cascade');
-            $table->foreign('uidd')->references('uidd')->on('users_table')->onDelete('cascade');
+            $table->foreign('uuid')->references('uuid')->on('users_table')->onDelete('cascade');
 
         });
     }

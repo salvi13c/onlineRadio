@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administration;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,7 +10,7 @@ class AdministrationEditStationsController extends Controller
 {
     public function __invoke(Request $request)
     {
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
+        if (session()->has('userUuid') && session('userLevel')=='admin'){
             return view('editstations', [
                 'countriesList' => $this->getCountries(),
                 'generesList' => $this->getGeneres(),

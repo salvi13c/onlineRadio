@@ -10,7 +10,7 @@ class NewsController extends Controller
 
     public function __invoke(Request $request){
         return view('news', [
-            'newslist' => $this->feed("https://www.billboard.com/feed/")
+            'newslist' => $this->feed($this->getNewsUrl())
         ]);
     }
 
@@ -42,6 +42,11 @@ class NewsController extends Controller
             //echo '<div style="clear: both;"></div>';
         }
     return $newslist;
+    }
+
+    function getNewsUrl(){
+        $news = DB::select("SELECT * from settings where config_name='rss_news_url'");
+        return $news[0]->value;
     }
 }
 

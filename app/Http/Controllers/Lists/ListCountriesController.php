@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Lists;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ListGeneresController extends Controller
+class ListCountriesController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,13 +16,13 @@ class ListGeneresController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('listgeneres', [
-            'generesList' => $this->getGeneres()
+        return view('listcountries', [
+            'countriesList' => $this->getCountries()
         ]);
     }
 
-    public function getGeneres(){
-        $generes = DB::select("SELECT * from generes");
+    public function getCountries(){
+        $generes = DB::select("SELECT * from countries LIMIT 7");
         return $generes;
     }
 }

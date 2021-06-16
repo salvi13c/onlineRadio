@@ -2,11 +2,11 @@
 @section('content')
 <div class="my-5">
 <h1 class="my-3">Profile</h1>
-Name: {{ $userProfile[0]->name }}<br>
-Email: {{ $userProfile[0]->email }}<br>
-User Level: {{ $userProfile[0]->user_level }}<br>
+<b>Name:</b> {{ $userProfile[0]->name }}<br>
+<b>Email:</b> {{ $userProfile[0]->email }}<br>
+<b>User Level:</b> {{ $userProfile[0]->user_level }}<br>
 </div>
-
+<a class="btn login-btn btn-primary my-1" id="change_password_button" href="/changepassword">Change Password</a>
 <h4 class="my-3">Latest listened songs</h4>
 <table class="table historial-table my-3">
     <thead id="tableHeadColor">
@@ -28,5 +28,5 @@ User Level: {{ $userProfile[0]->user_level }}<br>
       @endforeach
     </tbody>
   </table>
-  <button id="delete_historial_button" class="btn font-weight-bold my-5" onclick="deleteHistorial()" >Delete Historial</button>
+  <a class="btn login-btn btn-primary my-5" id="show_historial_button" href="/historial">Show Historial</a>
 @endsection
