@@ -23,9 +23,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/news">News</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/stations">Search</a>
-        </li>
         @if (session()->has('userUidd'))
         <li class="nav-item">
           <a class="nav-link" href="/news">My stations</a>

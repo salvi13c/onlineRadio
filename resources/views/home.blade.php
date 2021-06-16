@@ -10,12 +10,8 @@
 			<div class="form-row">
 				<div class="form-group col-12">
 					<input type="text" class="form-control p-4" id="searchstations"
-<<<<<<< HEAD
 					placeholder="SEARCH STATIONS" name="searchstations">
 					<input type="submit" style="visibility: hidden;" /><br>
-=======
-					placeholder="SEARCH STATIONS" name="Search Stations"><br>
->>>>>>> master
 					<table class="table table-bordered table-hover">
 						<tbody>
 						</tbody>
