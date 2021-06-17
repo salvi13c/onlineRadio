@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <h1 class="my-3">Historial</h1>
+<div id="table-box">
 <table class="table historial-table my-3">
     <thead>
       <tr id="tableHeadColor">
@@ -22,6 +23,6 @@
     </tbody>
   </table>
   <button id="delete_historial_button" class="btn font-weight-bold my-5" onclick="deleteHistorial()" >Delete Historial</button>
-
+</div>
 
 @endsection

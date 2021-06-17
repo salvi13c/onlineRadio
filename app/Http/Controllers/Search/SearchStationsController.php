@@ -23,7 +23,7 @@ class SearchStationsController extends Controller
             if($stationsList && !$request->search=="") {    
                 foreach ($stationsList as $key => $stations) {  
                     $output.='<tr>'.
-                    '<td><img src="'.$stations->image.'" width="60" height="50" id="search_image"><a href="/detailsstation/'.$stations->id.'">'.$stations->name.'<a></td>'.
+                    '<td><img src="'.$stations->image.'" width="60" height="50" id="search_image"><a id="search-text" href="/detailsstation/'.$stations->id.'">'.$stations->name.'<a></td>'.
                     '</tr>';
                 }
                 return Response($output); 

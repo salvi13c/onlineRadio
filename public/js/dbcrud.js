@@ -13,7 +13,7 @@ function addCountry(){
     }
 
     if (verified==true){
-        document.location ="/adminpanel/crud/add/country/insert/"+name+"/"+continent+"/"+language;
+        document.location ="/adminpanel/crud/add/country/insert/"+btoa(name)+"/"+btoa(continent)+"/"+btoa(language);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -30,7 +30,7 @@ function addGenere(){
     }
 
     if (verified==true){
-        document.location ="/adminpanel/crud/add/genere/insert/"+name+"/"+description;
+        document.location ="/adminpanel/crud/add/genere/insert/"+btoa(name)+"/"+btoa(description);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -61,7 +61,7 @@ function addStation(){
 
 
     if (verified==true){
-        document.location ="/adminpanel/crud/add/station/insert/"+btoa(name)+"/"+btoa(description)+"/"+btoa(image)+"/"+btoa(country)+"/"+btoa(genere)+"/"+btoa(url)
+        document.location ="/adminpanel/crud/add/station/insert/"+btoa(name)+"/"+btoa(description)+"/"+btoa(image)+"/"+btoa(country)+"/"+btoa(genere)+"/"+btoa(url);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -90,7 +90,7 @@ function editCountry(id){
     }
 
     if (verified==true){
-        document.location ="/adminpanel/crud/update/country/edit/"+name+"/"+continent+"/"+language+"/"+id;
+        document.location ="/adminpanel/crud/update/country/edit/"+btoa(name)+"/"+btoa(continent)+"/"+btoa(language)+"/"+btoa(id);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -107,7 +107,7 @@ function editGenere(id){
     }
 
     if (verified==true){
-        document.location ="/adminpanel/crud/update/genere/edit/"+name+"/"+description+"/"+id;
+        document.location ="/adminpanel/crud/update/genere/edit/"+btoa(name)+"/"+btoa(description)+"/"+btoa(id);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -137,7 +137,7 @@ function editStation(id){
 
 
     if (verified==true){
-        document.location ="/adminpanel/crud/update/station/edit/"+btoa(name)+"/"+btoa(description)+"/"+btoa(image)+"/"+btoa(country)+"/"+btoa(genere)+"/"+btoa(url)+"/"+btoa(id)
+        document.location ="/adminpanel/crud/update/station/edit/"+btoa(name)+"/"+btoa(description)+"/"+btoa(image)+"/"+btoa(country)+"/"+btoa(genere)+"/"+btoa(url)+"/"+btoa(id);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -152,7 +152,7 @@ function editSettings(id){
 
 
     if (verified==true){
-        document.location ="/adminpanel/crud/update/setting/edit/"+btoa(value)+"/"+btoa(id)
+        document.location ="/adminpanel/crud/update/setting/edit/"+btoa(value)+"/"+btoa(id);
     }else{
         alert("One or more of the fields are empty")
     }
@@ -160,18 +160,18 @@ function editSettings(id){
 
 function deleteCountry(id){
     if (confirm("Are you sure you want to delete the country ?")) {
-        document.location ="/adminpanel/crud/delete/country/remove/"+id;
+        document.location ="/adminpanel/crud/delete/country/remove/"+btoa(id);
       }
 }
 
 function deleteGenere(id){
     if (confirm("Are you sure you want to delete the genere ?")) {
-        document.location ="/adminpanel/crud/delete/genere/remove/"+id;
+        document.location ="/adminpanel/crud/delete/genere/remove/"+btoa(id);
     }
 }
 
 function deleteStation(id){
     if (confirm("Are you sure you want to delete the station ?")) {
-        document.location ="/adminpanel/crud/delete/station/remove/"+id;
+        document.location ="/adminpanel/crud/delete/station/remove/"+btoa(id);
     }
 }

@@ -15,6 +15,7 @@ class CountryStationListController extends Controller
         if ($stations!=null){
             return view('liststationsbycountry',[
                 'stations' => $stations,
+                'country' => $request->name
     
             ]);
         }else{

@@ -134,7 +134,7 @@ input[type=password] {
 }
 
 #register_button,#login_button,#add_country_button,#add_genere_button,#add_station_button,
-#edit_station_button,#edit_genere_button,#edit_country_button,#delete_historial_button, #show_historial_button, #change_password_button, #send_report_button{
+#edit_station_button,#edit_genere_button,#edit_country_button,#delete_historial_button, #show_historial_button, #change_password_button, #send_report_button, #send_suggestion_button{
     border: 0 none;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -151,7 +151,7 @@ input[type=password] {
     width: auto;
     letter-spacing: 0.5px;
     border-radius: 0;
-    padding: 15px 43px;
+    padding: 15px 46px;
 	color:#004266; 
 }
 
@@ -200,7 +200,7 @@ input[type=password] {
 
 .news-flex-box-article {
     width: 30vw;
-    margin: 30px;
+    margin: 20px;
 }
 
 .news-flex-box-article a{
@@ -292,64 +292,43 @@ footer{
 #positionTopChart{
     font-size: 1.5em;
 }
+#search-text{
+    color:#004266;
+}
 
 
-@media only screen and (max-width: 900px) {
 
+@media only screen and (max-width: 950px) {
     h1{
         font-size: 2em;
     }
     h4{
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
 
-    .country-flex-box-name, .country-flex-box-more{
-        width: 40vw;
-        padding-left: 1em;
-        padding-top: 1em;
-        padding-bottom: 2em;
-        background-color: #068fda;
-        color:white;
-        border-radius: 10px;
-        margin-right: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-size: 5vw;
+    .country-flex-box-name, .country-flex-box-more, .genere-flex-box-name, .genere-flex-box-more{
+        width: 31vw;
+        margin-right: 1em;
+        font-size: 4vw;
     }
 
-    .genere-flex-box-name, .genere-flex-box-more{
-        width: 40vw;
-        padding-left: 1em;
-        padding-top: 1em;
-        padding-bottom: 2em;
-        background-color: #004266;
-        color:white;
-        border-radius: 10px;
-        margin-right: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-size: 5vw;
-    }
 
   
       
 
       #stationElement{
-        width: 10em;
-        height: 11em;
+        width: 8em;
+        height: 13.5em;
         margin-left:1em;
         margin-right:1em;
     }
     
     .card-img-top{
         width: auto;
-        height: 6em;
+        height: 5em;
     }
 
-    .news-flex-box-article {
-        width: 100vw;
-    }
 
     .login-btn,.register-btn,.logout-btn{
         font-size: 0.7em;
@@ -370,14 +349,52 @@ footer{
     .logout-btn{
         padding: 10px 10px;
     }
-
-    
-
-  
+}
 
 
-    
-  }
+@media only screen and (max-width: 950px) and (min-width: 750px) {
+
+    .nav-link{
+        font-size: 12px;
+    }
+
+    .genere-flex-box-name, .genere-flex-box-more, .country-flex-box-name, .country-flex-box-more{
+        width: 21vw;
+        margin-right: 1em;
+        font-size: 3vw;
+    }
+
+    .news-flex-box-article {
+        width: 30vw;
+        margin: 20px;
+    }
+
+
+    .card-img-top{
+        width: 10em;
+        height: 8em;
+    }
+}
+
+@media only screen and (max-width: 750px) and (min-width: 500px) {
+    .news-flex-box-article {
+        width: 100vw;
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .genere-flex-box-name, .genere-flex-box-more, .country-flex-box-name, .country-flex-box-more{
+        width: 36vw;
+        margin-right: 1em;
+        font-size: 4.5vw;
+    }
+
+    .news-flex-box-article {
+        width: 100vw;
+    }
+}
 
 
 

@@ -15,6 +15,7 @@ class genereStationListController extends Controller
         if ($stations!=null){
             return view('liststationsbygenere',[
                 'stations' => $stations,
+                'genere' => $request->name
     
             ]);
         }else{

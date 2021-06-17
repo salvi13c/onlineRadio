@@ -10,7 +10,7 @@ class AdministrationAddCountriesController extends Controller
 {
     public function __invoke(Request $request)
     {
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
+        if (session()->has('userUuid') && session('userLevel')=='admin'){
             return view('addcountries');
         }else{
             return redirect('/');

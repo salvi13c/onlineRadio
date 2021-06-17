@@ -1,4 +1,5 @@
-<nav class="navbar navbar-custom navbar-expand-md navbar-light text-dark sticky-top py-3" id="navbar">
+
+<nav class="navbar navbar-custom navbar-expand-lg navbar-light text-dark sticky-top py-3" id="navbar">
     <!-- Brand -->
     <a class="navbar-brand" href="/">Online radio</a>
   
@@ -48,7 +49,7 @@
           <a class="nav-link" id=email_navbar href="/user/profile">
         </li>
         <li class="nav-item mx-1">
-          <a class="btn logout-btn btn-primary" id="logout_button_navbar" onclick="logout()"class="btn btn-primary">Logout</a>
+          <a class="btn logout-btn btn-primary mb-3" id="logout_button_navbar" onclick="logout()"class="btn btn-primary">Logout</a>
         </li>
         <li class="nav-item mx-1">
           <a class="btn login-btn btn-primary" id="login_button_navbar"  class="btn btn-primary" href="/login">Login</a>

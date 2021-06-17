@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <h1 class="my-3">Search Results</h1>
+<div id="table-box">
 <table class="table search-table my-3">
     <thead>
       <tr>
@@ -23,4 +24,5 @@
       @endforeach
     </tbody>
   </table>
+  </div>
 @endsection

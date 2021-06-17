@@ -10,7 +10,7 @@ class AdministrationEditCountriesController extends Controller
 {
     public function __invoke(Request $request)
     {
-        if (session()->has('userUidd') && session('userLevel')=='admin'){
+        if (session()->has('userUuid') && session('userLevel')=='admin'){
             return view('editcountries', [
                 'name' =>  base64_decode($request->name),
                 'continent' =>base64_decode($request->continent),

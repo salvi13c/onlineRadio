@@ -1,20 +1,21 @@
 @extends('layout')
 @section('content')
 <div class="row radio-player-box bg-light p-5">
-    <div class="col-3 m-2">
+    <div class="col-dm-12 col-lg-3 m-2">
         <img src="{{ $stationElement[0]->station_image }}" width="100%">
     </div>
-    <div class="col-6 m-2">
+    <div class="col-md-12 col-lg-6  m-2">
       <h1> {{ $stationElement[0]->station_name }}</h1>
         <br>
         <audio autoplay controls='controls'> 
             <source src='{{ $stationElement[0]->station_url}}' type='audio/mpeg'/>
         </audio>
     </div>
-    <div class="col-1 m-2">
+    <div class="col-dm-12 col-md-2 m-2">
       <button id="share_button" class="btn font-weight-bold my-3" data-toggle="modal" data-target="#shareModal">Share</button>
+      <br>
       <button type="button" id="details_button" class="btn font-weight-bold my-3" data-toggle="modal" data-target="#detailsModal"  >
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text mx-2" viewBox="0 0 16 16">
           <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
           <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
         </svg>Details </button>

@@ -11,7 +11,7 @@ Fusce vitae vehicula enim. Proin tincidunt ligula quis dignissim aliquam. Nulla 
 <p class="my-5">
 User uidd:  {{$userUuid}}<br>
 User Level:  {{$userLevel}}
-
-<a class="btn login-btn btn-primary my-5" id="send_report_button" href="/report">Show Historial</a>
+<br>
+<a class="btn login-btn btn-primary my-5" id="send_report_button" href="/report">Send report</a>
 </p>
 @endsection

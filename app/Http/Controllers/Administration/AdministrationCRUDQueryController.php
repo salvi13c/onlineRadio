@@ -24,13 +24,13 @@ class AdministrationCRUDQueryController extends Controller
         $action = $request->action;
         if ($action=="insert"){
             if ($type=="genere"){
-                $name = $request->name;
-                $description = $request->description;
+                $name = base64_decode($request->name);
+                $description = base64_decode($request->description);
                 $this->addGenere($name,$description);
             }else if ($type=="country"){
-                $name = $request->name;
-                $continent = $request->continent;
-                $language = $request->language;
+                $name = base64_decode($request->name);
+                $continent = base64_decode($request->continent);
+                $language = base64_decode($request->language);
                 $this->addCountry($name,$continent,$language);
             }else if ($type=="station"){
                 $name = base64_decode($request->name);
@@ -43,15 +43,15 @@ class AdministrationCRUDQueryController extends Controller
             }
         }else if ($action=="edit"){
             if ($type=="genere"){
-                $id = $request->id;
-                $name = $request->name;
-                $description = $request->description;
+                $id = base64_decode($request->id);
+                $name = base64_decode($request->name);
+                $description = base64_decode($request->description);
                 $this->editGenere($name,$description,$id);
             }else if ($type=="country"){
-                $id = $request->id;
-                $name = $request->name;
-                $continent = $request->continent;
-                $language = $request->language;
+                $id = base64_decode($request->id);
+                $name = base64_decode($request->name);
+                $continent = base64_decode($request->continent);
+                $language = base64_decode($request->language);
                 $this->editCountry($name,$continent,$language,$id);
             }else if ($type=="station"){
                 $id = base64_decode($request->id);
@@ -69,13 +69,13 @@ class AdministrationCRUDQueryController extends Controller
             }
         }else if ($action=="remove"){
             if ($type=="genere"){
-                $id = $request->id;
+                $id = base64_decode($request->id);
                 $this->deleteGenere($id);
             }else if ($type=="country"){
-                $id = $request->id;
+                $id = base64_decode($request->id);
                 $this->deleteCountry($id);
             }else if ($type=="station"){
-                $id = $request->id;
+                $id = base64_decode($request->id);
                 $this->deleteStation($id);
             } 
         }

@@ -3,14 +3,16 @@
 <h1>Edit Station</h1>
 
 <div class="container-fluid">
-    <div id="user_login">
       <div class="form-group p-2">
+        <label for="name"><b>Name</b></label>
         <input type="text" id="name_field" class="form-control" value="{{$name}}"  placeholder="Name" required>
       </div>
       <div class="form-group p-2">
+          <label for="description"><b>Description</b></label>
         <input type="text" id="description_field" class="form-control" value="{{$description}}"  placeholder="Description" required>
       </div>
       <div class="form-group p-2">
+           <label for="image"><b>Image</b></label>
         <input type="text" id="image_field" class="form-control" value="{{$image}}" placeholder="Image" required>
       </div>
       <div class="form-group p-2">
@@ -28,9 +30,9 @@
         </select>
       </div>
       <div class="form-group p-2">
+        <label for="url"><b>Url</b></label>
         <input type="text" id="url_field" class="form-control" value="{{$url}}" placeholder="URL" required>
       </div>
       <button id="edit_station_button" class="btn font-weight-bold my-3" onclick="editStation({{$id}})" >Edit</button>
-    </div>
   </div>
 @endsection

@@ -2,7 +2,6 @@
 @section('content')
 <h1>Add Station</h1>
 <div class="container-fluid">
-    <div id="user_login">
       <div class="form-group p-2">
         <input type="text" id="name_field" class="form-control" placeholder="Name" required>
       </div>
@@ -30,6 +29,5 @@
         <input type="text" id="url_field" class="form-control" placeholder="URL" required>
       </div>
       <button id="add_station_button" class="btn font-weight-bold my-3" onclick="addStation()" >Add</button>
-    </div>
   </div>
 @endsection
