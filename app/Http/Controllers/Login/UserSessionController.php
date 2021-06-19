@@ -60,7 +60,7 @@ class UserSessionController extends Controller
             function ($message) use ($email,$name) {
                 $message->from('onlineradio@radio.com');
                 $message->to($email,$name)
-                ->subject('Se ha enviado una sugerencia ');
+                ->subject('Welcome to Online Radio');
             }
             );
     

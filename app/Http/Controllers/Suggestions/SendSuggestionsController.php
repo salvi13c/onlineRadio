@@ -11,6 +11,12 @@ class SendSuggestionsController extends Controller
     public function __invoke(Request $request)
     {
         $this->sendMail($request);
+        echo "
+        <script type=\"text/javascript\">
+        alert('Report has been sended!')
+        </script>
+    ";
+    return redirect('/');
     }
     
     
@@ -19,18 +25,12 @@ class SendSuggestionsController extends Controller
         Mail::send(['html'=>'mailsuggestion'], $data=[
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'phone' => $request->get('phone'),
             'subject' => $request->get('subject') ],
             function ($message) use ($request) {
                 $message->from('biblioteca@prueba.com');
                 $message->to($request->get('email'), $request->get('name'))
-                ->subject('Se ha enviado una sugerencia');
+                ->subject('An user has sended a report.');
             }
             );
-        
-        
-        
-        
-        return 'Se ha enviado la sugerencia con exito';
     }
 }

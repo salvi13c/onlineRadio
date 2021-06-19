@@ -51,7 +51,7 @@
   @foreach ($countriesList as $country)
   <div class="country-flex-box-name" type="button"  onclick="window.open('/stations/bycountry/{{ $country->name }}','_self')">{{ $country->name }}</div>
   @endforeach
-  <div class="country-flex-box-more" type="button" onclick="window.open('/list/countries','_self')">All Conuntries</div>
+  <div class="country-flex-box-more" type="button" onclick="window.open('/list/countries','_self')">All Countries</div>
 </div>
 
 

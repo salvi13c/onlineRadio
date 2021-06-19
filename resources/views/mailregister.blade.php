@@ -12,7 +12,8 @@
 </head>
 <body>
 <div>
-<p>Thank you for registering to the OnlineRadio App</p>
+<p>Thank you for registering to the OnlineRadio App.<br>
+To login top the user section please use the email and password that you put at the register</p>
 <p>Name: {{$name}}</p>
 </div>
 </body>

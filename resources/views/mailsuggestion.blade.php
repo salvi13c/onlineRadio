@@ -13,7 +13,6 @@
 <body>
 <div>
 <p>Message from: {{$name}}</p>
-<p>Phone Number: {{$phone}}</p>
 <p>{{$subject}}</p>
 <p>{{$name}}</p>
 </div>
