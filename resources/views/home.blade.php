@@ -3,7 +3,7 @@
 <div class="containter">
 	<div class="jumbotron bg-white welcome">
 		<div class="text-center">
-			<h1 id="mainpagetitle" class="p-4">Welcome to music radio player</h1>
+			<img src="{{asset('/img/logo_large.png')}}" id="logo-main-page"/>
 		</div>
 		<form action="/search/results" method="post">
 			@csrf

@@ -27,7 +27,7 @@ class SendSuggestionsController extends Controller
             'email' => $request->get('email'),
             'subject' => $request->get('subject') ],
             function ($message) use ($request) {
-                $message->from('biblioteca@prueba.com');
+                $message->from('onlineradio57channels@radio.com');
                 $message->to($request->get('email'), $request->get('name'))
                 ->subject('An user has sended a report.');
             }

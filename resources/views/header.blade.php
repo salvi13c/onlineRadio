@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-custom navbar-expand-lg navbar-light text-dark sticky-top py-3" id="navbar">
     <!-- Brand -->
-    <a class="navbar-brand" href="/">Online radio</a>
+    <a class="navbar-brand" href="/"><img src="{{asset('/img/logo_white_large.png')}}" id="logo"/></a>
   
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

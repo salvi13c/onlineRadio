@@ -296,6 +296,14 @@ footer{
     color:#004266;
 }
 
+#logo{
+   width: 8em; 
+}
+
+#logo-main-page{
+    width: 40em; 
+}
+
 
 
 @media only screen and (max-width: 950px) {
@@ -350,6 +358,8 @@ footer{
         padding: 10px 10px;
     }
 }
+
+
 
 
 @media only screen and (max-width: 950px) and (min-width: 750px) {

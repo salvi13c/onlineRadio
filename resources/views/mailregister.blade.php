@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>mailprueba</title>
+	<title>Online Radio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-<p>Thank you for registering to the OnlineRadio App.<br>
+<p>Thank you for registering to the 57 Channels music radio player.<br>
 To login top the user section please use the email and password that you put at the register</p>
 <p>Name: {{$name}}</p>
 </div>

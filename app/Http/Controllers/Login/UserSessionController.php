@@ -58,9 +58,9 @@ class UserSessionController extends Controller
         Mail::send(['html'=>'mailregister'], $data=[
             'name' => $name],
             function ($message) use ($email,$name) {
-                $message->from('onlineradio@radio.com');
+                $message->from('onlineradio57channels@radio.com');
                 $message->to($email,$name)
-                ->subject('Welcome to Online Radio');
+                ->subject('Welcome to 57 Channels radio player');
             }
             );
     
