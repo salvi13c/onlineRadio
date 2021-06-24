@@ -75,13 +75,13 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <a href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank">
+        <a href="https://twitter.com/intent/tweet?text=Listening%20{{ $station->name }}%20at%2057%20channels" target="_blank">
           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
       </a>
-      <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=57channels.com&quote=Listening%20{{ $station->name }}%20at%2057%20channels" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
     </a>
-    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+    <a href="mailto:?Subject=Listening%20{{ $station->name }}%20at%2057%20channels ">
       <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
   </a>
       </div>

@@ -1,6 +1,6 @@
 <div class="text-center p-5">
     © 2021 Copyright:
-    <a href="#" class="text-light">OnlineRadio.com</a><br>
+    <a href="#" class="text-light">57channels.com</a><br>
     All the rights reserved.
     <div class="my-2">
         <a href="https://twitter.com" style="text-decoration: none">
