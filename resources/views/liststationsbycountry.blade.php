@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<h1 class="my-3"> {{$country}} Songs </h1>
+<h1 class="my-3"> {{$country}} Stations </h1>
 <div id="table-box">
 <table class="table top-chart-table my-3">
     <thead>

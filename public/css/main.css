@@ -314,6 +314,10 @@ footer{
         font-size: 0.8em;
     }
 
+    #logo-main-page{
+        width: 25em; 
+    }
+
 
     .country-flex-box-name, .country-flex-box-more, .genere-flex-box-name, .genere-flex-box-more{
         width: 31vw;
@@ -391,9 +395,18 @@ footer{
         width: 100vw;
         margin: 20px;
     }
+
+    #logo-main-page{
+        width: 20em; 
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
+
+    #logo-main-page{
+        width: 17em; 
+    }
 
     .genere-flex-box-name, .genere-flex-box-more, .country-flex-box-name, .country-flex-box-more{
         width: 36vw;

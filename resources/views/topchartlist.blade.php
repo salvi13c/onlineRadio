@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <h1 class="my-3">Top Charts</h1>
+<div id="table-box">
 <table class="table top-chart-table my-3">
     <thead>
       <tr id="tableHeadColor">
@@ -27,4 +28,5 @@
       @endforeach
     </tbody>
   </table>
+</div>
 @endsection

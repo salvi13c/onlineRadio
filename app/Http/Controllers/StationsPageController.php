@@ -15,9 +15,9 @@ class StationsPageController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $popularStations = DB::select('SELECT * from stations');
+      
         return view('stations', [
-            'popularStationsList' => $popularStations,
+            'popularStationsList' => $this->getPopularStations(),
             'newsStationsList' => $this->getStations('News'),
             'popStationsList' => $this->getStations('Pop'),
             'generesList' => $this->getGenere(),
@@ -25,6 +25,11 @@ class StationsPageController extends Controller
 
 
         ]);
+    }
+
+    public function getPopularStations(){
+        $popularStations = DB::select('SELECT * from stations ORDER BY RAND() LIMIT 10;');
+        return $popularStations;
     }
 
     public function getStations($genere){

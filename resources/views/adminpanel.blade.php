@@ -62,6 +62,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="crud-generes">
+                                <div id="table-box">
                                 <br>
                                 <h2>Generes</h2>
                                 <div class="crud-action-buttons">
@@ -87,6 +88,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                    </div>
                                     <div class="tab-pane fade" id="crud-countries">
                                         <div id="table-box">
                                             <br>
